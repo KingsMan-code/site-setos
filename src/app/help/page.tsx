@@ -2,9 +2,9 @@
 
 export default function Help() {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
-      <p style={{ fontSize: "2rem", fontWeight: "bold" }}>Ajuda</p>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-8">
+      <h1 className="text-4xl font-bold">Ajuda</h1>
       <p>Precisa de ajuda? Entre em contato conosco!</p>
-    </div>
+    </main>
   );
 }
