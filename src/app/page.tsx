@@ -1,6 +1,5 @@
 "use client";
 
-import { Flex, Text, Button } from "@radix-ui/themes";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -12,9 +11,9 @@ export default function Page() {
   }, [router]);
 
   return (
-    <Flex direction="column" gap="2">
-      <Text>Olá com Radix Themes!</Text>
-      <Button>Vamos lá</Button>
-    </Flex>
+    <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+      <p>Olá!</p>
+      <button>Vamos lá</button>
+    </div>
   );
 }
