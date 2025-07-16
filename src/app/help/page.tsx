@@ -1,12 +1,10 @@
 "use client";
 
-import { Flex, Text } from "@radix-ui/themes";
-
 export default function Help() {
   return (
-    <Flex direction="column" gap="3" align="center" justify="center" style={{ minHeight: "100vh" }}>
-      <Text size="6" weight="bold">Ajuda</Text>
-      <Text size="3">Precisa de ajuda? Entre em contato conosco!</Text>
-    </Flex>
+    <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
+      <p style={{ fontSize: "2rem", fontWeight: "bold" }}>Ajuda</p>
+      <p>Precisa de ajuda? Entre em contato conosco!</p>
+    </div>
   );
 }
