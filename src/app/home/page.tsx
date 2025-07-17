@@ -3,30 +3,8 @@
 export default function Home() {
   return (
     <>
-      <nav className="flex items-center w-full px-8">
-        {/* Bloco da esquerda - 70% largura */}
-        <div className="w-[70%]">
-          <span className="font-bold text-lg">Setos</span>
-        </div>
-
-        {/* Bloco da direita - 30% largura com links espaçados */}
-        <div className="w-[30%] flex justify-end space-x-8">
-          <a href="#" className="text-inherit no-underline hover:underline">
-            Services
-          </a>
-          <a href="#" className="text-inherit no-underline hover:underline">
-            Pricing
-          </a>
-          <a href="#" className="text-inherit no-underline hover:underline">
-            Features
-          </a>
-          <a href="#" className="text-inherit no-underline hover:underline">
-            About us
-          </a>
-        </div>
-      </nav>
-
-      <div>
+      <main>
+        <div>
         <div className="grid">
           <svg
             className="grid-svg"
@@ -165,12 +143,7 @@ export default function Home() {
           </g>
         </svg>
       </div>
-
-      <footer>
-        <p className="self-end pr-8 text-[hsl(155,100%,65%)]">TOS</p>
-        <p className="self-end pr-8 text-[hsl(155,100%,65%)]">Privacy Policy</p>
-        <p className="self-end pr-8 text-[hsl(155,100%,65%)]">Contact Us</p>
-      </footer>
+      </main>
 
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400");
