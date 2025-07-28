@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css?family=Manrope:700|Manrope:400');
+
+  :root {
+    --text: hsl(0, 0%, 99%);
+    --textDim: hsl(0, 0%, 60%);
+    --background: hsl(0, 0%, 7%);
+    --primary: hsl(155, 100%, 65%);
+    --primaryBg: hsla(155, 100%, 65%, 1%);
+    --primaryHi: hsla(155, 100%, 75%, 25%);
+    --primaryFg: hsl(155, 100%, 85%);
+    --secondary: hsl(156, 51%, 14%);
+    --secondaryFg: hsl(156, 51%, 75%);
+    --secondaryBg: hsla(156, 51%, 14%, 5%);
+    --secondaryHi: hsla(156, 51%, 30%, 50%);
+    --accent: hsl(155, 100%, 94%);
+    --accentBg: hsla(155, 100%, 94%, 1%);
+    --accentHi: hsla(155, 100%, 100%, 25%);
+  }
+  body {
+    @apply font-[Manrope] font-normal bg-[var(--background)] text-[var(--text)] px-[10%] flex flex-col items-center h-screen overflow-hidden;
+  }
+}
+
+@layer components {
+  .grid-bg {
+    @apply absolute h-full w-full flex items-center justify-center self-center -z-10;
+  }
+  .grid-svg {
+    @apply h-4/5 w-4/5 relative z-10;
+  }
+  .blur-circle {
+    @apply h-48 w-48 bg-[var(--primary)] blur-[100px] rounded-[100px] absolute z-0;
+  }
+  .title {
+    @apply text-[10rem] font-bold tracking-[-0.8rem] flex flex-col absolute justify-center self-center h-full z-[1000];
+  }
+  .title > p {
+    @apply m-0 leading-[10rem] w-auto;
+  }
+  .title > p:nth-child(1) {
+    @apply self-start;
+  }
+  .title > p:nth-child(2) {
+    @apply self-end text-[var(--primary)];
+  }
+  .title > p:nth-child(3) {
+    @apply self-end;
+  }
+  .material-icons {
+    @apply hidden fill-[var(--text)];
+  }
+  .nav-menu:hover {
+    @apply text-[var(--text)] cursor-pointer;
+  }
+  .button {
+    @apply flex flex-col justify-center items-center absolute no-underline text-inherit cursor-pointer h-[50px] w-[160px] z-[9999];
+  }
+  .button span {
+    @apply w-[100px] h-[60px] bg-[var(--primaryHi)] rounded-full blur-[20px] absolute bottom-[-50%] transition-all duration-200;
+  }
+  .button:hover span {
+    @apply opacity-60;
+  }
+  .button button {
+    @apply h-[50px] w-[160px] rounded-[13px] border-none bg-[var(--primaryBg)] shadow-[inset_0_-3px_15px_0_var(--primaryHi)] text-[var(--primaryFg)] font-[Manrope] text-base flex flex-col justify-center items-center absolute transform transition-all duration-200;
+  }
+  .button:hover button {
+    @apply translate-y-[5px];
+  }
+  .button-first {
+    @apply top-[12%] right-[20%];
+  }
+  .button-sec {
+    @apply bottom-[13%] right-[11%];
+  }
+  .button-sec button {
+    @apply bg-[var(--accentBg)] shadow-[inset_0_-3px_15px_0_var(--accentHi)] text-[var(--accentFg)];
+  }
+  .button-sec span {
+    @apply bg-[var(--accentHi)];
+  }
+  .button-third {
+    @apply bottom-[25%] left-[15%];
+  }
+  .button-third button {
+    @apply bg-[var(--secondaryBg)] shadow-[inset_0_-3px_15px_0_var(--secondary)] text-[var(--secondaryFg)];
+  }
+  .button-third span {
+    @apply bg-[var(--secondaryHi)];
+  }
+  .top-right {
+    @apply absolute top-0 right-0 -z-10 opacity-50;
+  }
+  .bottom-left {
+    @apply absolute bottom-0 left-0 -z-10 opacity-50;
+  }
+}
+
+@layer utilities {
+  @screen max\:1000px {
+    .title {
+      @apply text-4xl;
+    }
+    .title > p {
+      @apply leading-[5rem] tracking-[-0.3rem];
+    }
+    nav > :not(.sitename,.material-icons) {
+      @apply hidden;
+    }
+    nav {
+      @apply justify-between;
+    }
+    .material-icons {
+      @apply flex items-center;
+    }
+  }
+}
